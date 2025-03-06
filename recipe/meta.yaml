@@ -15,7 +15,7 @@ build:
 requirements:
   build:
     - {{ compiler('go-nocgo') }}
-    - go-licenses <1.1
+    - go-licenses
 
 test:
   commands:
