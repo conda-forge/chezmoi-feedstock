@@ -3,7 +3,7 @@ About chezmoi-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/chezmoi-feedstock/blob/main/LICENSE.txt)
 
-Home: https://chezmoi.io
+Home: https://chezmoi.io/
 
 Package license: MIT
 

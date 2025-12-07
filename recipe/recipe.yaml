@@ -1,12 +1,14 @@
-{% set name = "chezmoi" %}
-{% set version = "2.68.0" %}
+schema_version: 1
+
+context:
+  version: 2.68.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: chezmoi
+  version: ${{ version }}
 
 source:
-  url: https://github.com/twpayne/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  url: https://github.com/twpayne/chezmoi/archive/refs/tags/v${{ version }}.tar.gz
   sha256: accd6f9a982f9066ea8dbf385f5c68be869ac1e883d7e1faa9997194a7ad2982
 
 build:
@@ -14,21 +16,21 @@ build:
 
 requirements:
   build:
-    - {{ compiler('go-nocgo') }}
+    - ${{ compiler('go-nocgo') }}
     - go-licenses
 
-test:
-  commands:
-    - {{ name }} --help
+tests:
+  - script:
+      - chezmoi --help
 
 about:
-  home: https://chezmoi.io
   license: MIT
   license_file:
     - LICENSE
     - license-files/
   summary: Manage your dotfiles across multiple diverse machines, securely
-  dev_url: https://github.com/twpayne/{{ name }}
+  homepage: https://chezmoi.io
+  repository: https://github.com/twpayne/chezmoi
 
 extra:
   recipe-maintainers:
