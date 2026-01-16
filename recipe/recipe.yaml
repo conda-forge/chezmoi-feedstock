@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2.69.1"
+  version: "2.69.3"
 
 package:
   name: chezmoi
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/twpayne/chezmoi/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 5237f42076d02e2d109149e7c2985cd28468027ea918232c6062f4897b23be56
+  sha256: 69d7a741ee1208ae99555a3142e474aecaa5ba72eede720e068c5e5fcae00fa4
 
 build:
   number: 0
