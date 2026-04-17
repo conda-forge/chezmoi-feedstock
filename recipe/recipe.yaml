@@ -21,7 +21,11 @@ requirements:
 
 tests:
   - script:
-      - HOME=${HOME:-$PWD} chezmoi --help
+      content:
+        # workaround https://github.com/prefix-dev/rattler-build/issues/2424
+        - if: osx-64
+          then: export HOME=${HOME:-$PWD}
+        - chezmoi --help
 
 about:
   license: MIT
