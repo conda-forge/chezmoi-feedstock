@@ -21,7 +21,7 @@ requirements:
 
 tests:
   - script:
-      - chezmoi --help
+      - HOME=${HOME:-$PWD} chezmoi --help
 
 about:
   license: MIT
