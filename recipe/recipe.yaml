@@ -12,7 +12,7 @@ source:
   sha256: 52a2fbff0c11285bac91b9267bce0f48069153c111890debf61836953dfcbca8
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -22,10 +22,6 @@ requirements:
 tests:
   - script:
       content:
-        # workaround https://github.com/prefix-dev/rattler-build/issues/2424
-        - if: osx and x86_64
-          then:
-            - export HOME=${HOME:-$PWD}
         - chezmoi --help
 
 about:
