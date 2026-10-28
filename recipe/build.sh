@@ -4,12 +4,12 @@ set -o xtrace -o nounset -o pipefail -o errexit
 
 # Go 1.27's PIE binaries crash at startup on linux-ppc64le (SIGSEGV during
 # package init), so build a regular executable there.
-buildmode=()
+buildmode=""
 if [[ "${target_platform}" == "linux-ppc64le" ]]; then
-    buildmode=(-buildmode=exe)
+    buildmode="-buildmode=exe"
 fi
 
-go build -o=${PREFIX}/bin/${PKG_NAME} "${buildmode[@]}" -ldflags="-s -w -X main.version=${PKG_VERSION}"
+go build -o=${PREFIX}/bin/${PKG_NAME} ${buildmode} -ldflags="-s -w -X main.version=${PKG_VERSION}"
 go-licenses save . --save_path=license-files --ignore github.com/mattn/go-localereader --ignore filippo.io/nistec
 
 mkdir -p ${PREFIX}/etc/bash_completion.d
